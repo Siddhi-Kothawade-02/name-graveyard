@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>The Name Graveyard 👻</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Our CSS -->
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================
+         HORROR INTRO SCREEN
+    =================================== -->
+
+    <section id="introScreen"
+             class="intro-screen">
+
+
+        <!-- Background fog -->
+
+        <div class="fog fog-one"></div>
+
+        <div class="fog fog-two"></div>
+
+
+        <!-- Small decorative elements -->
+
+        <div class="spider">🕷️</div>
+
+        <div class="bat bat-one">🦇</div>
+
+        <div class="bat bat-two">🦇</div>
+
+
+        <!-- Main content -->
+
+        <div class="intro-content">
+
+
+            <!-- Ghost -->
+
+            <div class="ghost">
+
+                👻
+
+            </div>
+
+
+            <!-- Small warning -->
+
+            <p class="warning">
+
+                ⚠️ YOU HAVE BEEN WARNED ⚠️
+
+            </p>
+
+
+            <!-- Main title -->
+
+            <h1>
+
+                THE NAME
+
+                <span>GRAVEYARD</span>
+
+            </h1>
+
+
+            <!-- Description -->
+
+            <p class="intro-description">
+
+                Where innocent names<br>
+                come to die...
+
+            </p>
+
+
+            <!-- Enter button -->
+
+            <button id="enterBtn"
+                    class="enter-btn">
+
+                <span>ENTER IF YOU DARE</span>
+
+            </button>
+
+
+            <!-- Sound instruction -->
+
+            <p class="sound-note">
+
+                🔊 Turn up your volume
+
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+<!-- ==========================================
+     MAIN WEBSITE
+========================================== -->
+
+<main id="mainWebsite" class="hidden">
+
+    <!-- HEADER -->
+
+    <header class="graveyard-header">
+
+        <div class="header-ghost">
+            👻
+        </div>
+
+        <h2>
+            THE NAME GRAVEYARD
+        </h2>
+
+        <p>
+            Where funny names come to rest... 💀
+        </p>
+
+    </header>
+
+
+    <!-- ADD NAME SECTION -->
+
+    <section class="add-name-section">
+
+        <div class="section-icon">
+            🪦
+        </div>
+
+        <h3>
+            Bury A New Name
+        </h3>
+
+        <p class="section-description">
+            Got a funny name for someone?
+            Give them a permanent place
+            in the graveyard. 😂
+        </p>
+
+
+        <!-- FORM -->
+
+        <form id="nameForm">
+
+
+            <!-- PERSON NAME -->
+
+            <div class="input-group">
+
+                <label for="personName">
+                    👤 Person's Name
+                </label>
+
+                <input
+                    type="text"
+                    id="personName"
+                    placeholder="Enter their name..."
+                    maxlength="30"
+                    required
+                >
+
+            </div>
+
+
+            <!-- FUNNY NAME -->
+             <div class="input-group">
+                <div class="input-with-count">
+                    <input
+                    type="text"
+                    id="funnyName"
+                    placeholder="Give them a legendary name..."
+                    maxlength="50"
+                    required
+                    >
+                    <span id="funnyCount">0/50</span>
+                </div>
+                </div>
+                
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                id="buryBtn"
+                class="bury-btn">
+
+                🪦 BURY THIS NAME
+
+            </button>
+
+
+        </form>
+
+
+        <!-- STATUS -->
+
+        <p
+            id="formMessage"
+            class="form-message">
+        </p>
+
+    </section>
+
+
+    <!-- NAMES -->
+
+    <section class="names-section">
+
+        <div class="names-heading">
+
+            <span>💀</span>
+
+            <h3>
+                THE GRAVEYARD
+            </h3>
+
+            <span>💀</span>
+
+        </div>
+
+
+        <p class="names-subtitle">
+            The names that survived the roast.
+        </p>
+
+
+        <!-- NAMES WILL APPEAR HERE -->
+
+        <div
+            id="namesContainer"
+            class="names-container">
+
+            <div class="loading">
+                👻 Digging up names...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="graveyard-footer">
+
+        <p>
+            Made with 😂, 👻 and questionable decisions.
+        </p>
+
+        <p>
+            Enter at your own risk.
+        </p>
+
+    </footer>
+
+</main>
+
+
+
+    <!-- ==================================
+         HORROR SOUND
+    =================================== -->
+
+    <audio id="horrorSound"
+           src="assets/horror.mp3"
+           preload="auto">
+    </audio>
+
+
+
+    <!-- ==================================
+         JAVASCRIPT
+    =================================== -->
+
+    <script type="module"  src="script.js"></script>
+
+
+</body>
+
+</html>

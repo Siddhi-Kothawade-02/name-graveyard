@@ -1,0 +1,1348 @@
+/* ==========================================
+   BASIC RESET
+========================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    background: #050308;
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+
+    overflow-x: hidden;
+
+}
+
+
+/* ==========================================
+   INTRO SCREEN
+========================================== */
+
+.intro-screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #35103e 0%,
+            #17091c 35%,
+            #050308 75%
+        );
+
+    z-index: 9999;
+
+    transition:
+        opacity 0.7s ease,
+        visibility 0.7s ease;
+
+}
+
+
+/* ==========================================
+   DARK VIGNETTE
+========================================== */
+
+.intro-screen::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            transparent 30%,
+            rgba(0,0,0,0.8) 100%
+        );
+
+}
+
+
+/* ==========================================
+   FOG
+========================================== */
+
+.fog {
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 200px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(180, 180, 180, 0.05);
+
+    filter: blur(50px);
+
+    pointer-events: none;
+
+}
+
+
+.fog-one {
+
+    bottom: 5%;
+
+    left: -150px;
+
+    animation:
+        fogMoveOne 10s
+        ease-in-out
+        infinite;
+
+}
+
+
+.fog-two {
+
+    bottom: 20%;
+
+    right: -150px;
+
+    animation:
+        fogMoveTwo 12s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes fogMoveOne {
+
+    0%,100% {
+
+        transform:
+            translateX(0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translateX(300px)
+            scale(1.4);
+
+    }
+
+}
+
+
+@keyframes fogMoveTwo {
+
+    0%,100% {
+
+        transform:
+            translateX(0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translateX(-300px)
+            scale(1.3);
+
+    }
+
+}
+
+
+/* ==========================================
+   INTRO CONTENT
+========================================== */
+
+.intro-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    text-align: center;
+
+    padding: 20px;
+
+}
+
+
+/* ==========================================
+   GHOST
+========================================== */
+
+.ghost {
+
+    font-size: 85px;
+
+    margin-bottom: 15px;
+
+    filter:
+        drop-shadow(
+            0 0 25px
+            rgba(255,255,255,0.2)
+        );
+
+    animation:
+
+        ghostFloat
+        3s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes ghostFloat {
+
+    0%,100% {
+
+        transform:
+            translateY(0)
+            rotate(-3deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-18px)
+            rotate(3deg);
+
+    }
+
+}
+
+
+/* ==========================================
+   WARNING
+========================================== */
+
+.warning {
+
+    color: #a74cbc;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.intro-content h1 {
+
+    font-family: "Creepster", cursive;
+
+    font-size:
+        clamp(65px, 11vw, 135px);
+
+    font-weight: 400;
+
+    line-height: 0.82;
+
+    letter-spacing: 5px;
+
+    text-shadow:
+
+        0 0 10px
+        rgba(174, 58, 203, 0.5),
+
+        0 0 30px
+        rgba(174, 58, 203, 0.3);
+
+}
+
+
+.intro-content h1 span {
+
+    display: block;
+
+    color: #a936bd;
+
+}
+
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
+
+.intro-description {
+
+    color: #aaa;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin-top: 25px;
+
+    margin-bottom: 35px;
+
+}
+
+
+/* ==========================================
+   ENTER BUTTON
+========================================== */
+
+.enter-btn {
+
+    position: relative;
+
+    padding: 17px 35px;
+
+    border-radius: 8px;
+
+    border: 1px solid
+        rgba(205, 75, 235, 0.5);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #76258c,
+            #a936bd
+        );
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    box-shadow:
+
+        0 0 20px
+        rgba(169, 54, 189, 0.35);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.enter-btn:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    box-shadow:
+
+        0 0 40px
+        rgba(169, 54, 189, 0.7);
+
+}
+
+
+.enter-btn:active {
+
+    transform:
+        scale(0.96);
+
+}
+
+
+/* ==========================================
+   BUTTON SHINE
+========================================== */
+
+.enter-btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -100%;
+
+    width: 60%;
+
+    height: 100%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.2),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    animation:
+
+        buttonShine
+        3s
+        infinite;
+
+}
+
+
+@keyframes buttonShine {
+
+    0% {
+
+        left: -100%;
+
+    }
+
+    40%,100% {
+
+        left: 150%;
+
+    }
+
+}
+
+
+/* ==========================================
+   SOUND NOTE
+========================================== */
+
+.sound-note {
+
+    margin-top: 20px;
+
+    color: #666;
+
+    font-size: 11px;
+
+}
+
+
+/* ==========================================
+   SPIDER
+========================================== */
+
+.spider {
+
+    position: absolute;
+
+    top: 30px;
+
+    right: 50px;
+
+    font-size: 40px;
+
+    opacity: 0.45;
+
+    animation:
+
+        spiderMove
+        4s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes spiderMove {
+
+    0%,100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(20px);
+
+    }
+
+}
+
+
+/* ==========================================
+   BATS
+========================================== */
+
+.bat {
+
+    position: absolute;
+
+    font-size: 35px;
+
+    opacity: 0.25;
+
+}
+
+
+.bat-one {
+
+    top: 20%;
+
+    left: 8%;
+
+    animation:
+
+        batMoveOne
+        8s
+        linear
+        infinite;
+
+}
+
+
+.bat-two {
+
+    top: 35%;
+
+    right: 8%;
+
+    animation:
+
+        batMoveTwo
+        10s
+        linear
+        infinite;
+
+}
+
+
+@keyframes batMoveOne {
+
+    0% {
+
+        transform:
+            translate(0,0);
+
+    }
+
+    50% {
+
+        transform:
+            translate(100px,-50px);
+
+    }
+
+    100% {
+
+        transform:
+            translate(0,0);
+
+    }
+
+}
+
+
+@keyframes batMoveTwo {
+
+    0% {
+
+        transform:
+            translate(0,0);
+
+    }
+
+    50% {
+
+        transform:
+            translate(-100px,50px);
+
+    }
+
+    100% {
+
+        transform:
+            translate(0,0);
+
+    }
+
+}
+
+
+/* ==========================================
+   MAIN WEBSITE
+========================================== */
+
+.hidden {
+
+    display: none;
+
+}
+
+
+#mainWebsite {
+
+    min-height: 100vh;
+
+    padding: 100px 20px;
+
+    text-align: center;
+
+    background: #09070b;
+
+}
+
+
+#mainWebsite h2 {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
+}
+
+
+#mainWebsite p {
+
+    color: #888;
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+
+    .intro-content h1 {
+
+        font-size: 65px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .ghost {
+
+        font-size: 65px;
+
+    }
+
+
+    .warning {
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .spider {
+
+        right: 20px;
+
+        top: 20px;
+
+    }
+
+
+    .bat {
+
+        font-size: 25px;
+
+    }
+
+
+    .enter-btn {
+
+        padding:
+            15px 24px;
+
+        font-size: 12px;
+
+    }
+
+}
+
+/* ==========================================
+   HORROR SCREEN SHAKE
+========================================== */
+
+.shake {
+
+    animation:
+        screenShake
+        0.45s
+        ease-in-out;
+
+}
+
+
+@keyframes screenShake {
+
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-8px, 5px);
+    }
+
+    40% {
+        transform: translate(8px, -5px);
+    }
+
+    60% {
+        transform: translate(-6px, 3px);
+    }
+
+    80% {
+        transform: translate(6px, -3px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+
+}
+/* ==========================================
+   MAIN GRAVEYARD
+========================================== */
+
+#mainWebsite {
+
+    min-height: 100vh;
+
+    padding: 50px 20px 80px;
+
+    background:
+
+        radial-gradient(
+            circle at top,
+            #28102f,
+            #09070b 55%
+        );
+
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.graveyard-header {
+
+    text-align: center;
+
+    max-width: 800px;
+
+    margin: 0 auto 50px;
+
+}
+
+
+.header-ghost {
+
+    font-size: 65px;
+
+    margin-bottom: 10px;
+
+    animation:
+
+        ghostFloat
+        3s
+        ease-in-out
+        infinite;
+
+}
+
+
+.graveyard-header h2 {
+
+    font-family: "Creepster", cursive;
+
+    font-size:
+        clamp(45px, 8vw, 85px);
+
+    font-weight: 400;
+
+    color: #c45bd8;
+
+    letter-spacing: 3px;
+
+    text-shadow:
+
+        0 0 20px
+        rgba(196,91,216,0.4);
+
+}
+
+
+.graveyard-header p {
+
+    color: #888;
+
+    margin-top: 10px;
+
+}
+
+
+/* ==========================================
+   ADD NAME SECTION
+========================================== */
+
+.add-name-section {
+
+    width: 100%;
+
+    max-width: 600px;
+
+    margin: 0 auto 70px;
+
+    padding: 35px;
+
+    background:
+
+        rgba(255,255,255,0.03);
+
+    border:
+
+        1px solid
+        rgba(196,91,216,0.25);
+
+    border-radius: 20px;
+
+    box-shadow:
+
+        0 20px 60px
+        rgba(0,0,0,0.4);
+
+}
+
+
+.section-icon {
+
+    text-align: center;
+
+    font-size: 45px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.add-name-section h3 {
+
+    text-align: center;
+
+    font-size: 28px;
+
+    color: #eee;
+
+}
+
+
+.section-description {
+
+    text-align: center;
+
+    color: #888;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin:
+
+        10px
+        auto
+        30px;
+
+    max-width: 450px;
+
+}
+
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+.input-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #bbb;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.input-group input {
+
+    width: 100%;
+
+    padding: 15px 16px;
+
+    border:
+
+        1px solid
+        #39283d;
+
+    border-radius: 10px;
+
+    background: #0d0a10;
+
+    color: white;
+
+    font-family: "Poppins",
+        sans-serif;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border 0.2s,
+        box-shadow 0.2s;
+
+}
+
+
+.input-group input::placeholder {
+
+    color: #555;
+
+}
+
+
+.input-group input:focus {
+
+    border-color: #a936bd;
+
+    box-shadow:
+
+        0 0 15px
+        rgba(169,54,189,0.2);
+
+}
+
+
+/* ==========================================
+   BURY BUTTON
+========================================== */
+
+.bury-btn {
+
+    width: 100%;
+
+    padding: 16px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #76258c,
+            #a936bd
+        );
+
+    color: white;
+
+    font-family: "Poppins",
+        sans-serif;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    letter-spacing: 0.5px;
+
+    transition:
+
+        transform 0.2s,
+        box-shadow 0.2s;
+
+}
+
+
+.bury-btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(169,54,189,0.35);
+
+}
+
+
+.bury-btn:active {
+
+    transform:
+        scale(0.97);
+
+}
+
+
+/* ==========================================
+   FORM MESSAGE
+========================================== */
+
+.form-message {
+
+    text-align: center;
+
+    min-height: 22px;
+
+    margin-top: 15px;
+
+    font-size: 13px;
+
+}
+
+
+/* ==========================================
+   NAMES SECTION
+========================================== */
+
+.names-section {
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+}
+
+
+.names-heading {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 18px;
+
+}
+
+
+.names-heading span {
+
+    font-size: 25px;
+
+}
+
+
+.names-heading h3 {
+
+    font-family:
+        "Creepster",
+        cursive;
+
+    font-size: 40px;
+
+    font-weight: 400;
+
+    color: #c45bd8;
+
+}
+
+
+.names-subtitle {
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 13px;
+
+    margin:
+        8px
+        0
+        30px;
+
+}
+
+
+/* ==========================================
+   NAME CARDS
+========================================== */
+
+.names-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(260px, 1fr)
+        );
+
+    gap: 20px;
+
+}
+
+
+.name-card {
+
+    position: relative;
+
+    padding: 25px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #151017,
+            #0c090e
+        );
+
+    border:
+
+        1px solid
+        #302034;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    transition:
+
+        transform 0.25s,
+        border-color 0.25s;
+
+}
+
+
+.name-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(196,91,216,0.5);
+
+}
+
+
+.name-card::before {
+
+    content: "🪦";
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 18px;
+
+    font-size: 25px;
+
+    opacity: 0.5;
+
+}
+
+
+.real-name {
+
+    color: #777;
+
+    font-size: 12px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.funny-name {
+
+    color: #e2a8eb;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    word-break: break-word;
+
+}
+
+
+.name-date {
+
+    color: #555;
+
+    font-size: 10px;
+
+    margin-top: 15px;
+
+}
+
+
+/* ==========================================
+   LOADING
+========================================== */
+
+.loading {
+
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 40px;
+
+    color: #777;
+
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.graveyard-footer {
+
+    text-align: center;
+
+    margin-top: 80px;
+
+    color: #444;
+
+    font-size: 11px;
+
+    line-height: 2;
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    #mainWebsite {
+
+        padding:
+            35px 15px 60px;
+
+    }
+
+
+    .add-name-section {
+
+        padding: 25px 20px;
+
+    }
+
+
+    .names-heading h3 {
+
+        font-size: 32px;
+
+    }
+
+}
+/* ==========================================
+   INPUT CHARACTER COUNTER
+========================================== */
+
+.input-with-count {
+
+    position: relative;
+
+}
+
+
+.input-with-count input {
+
+    padding-right: 65px;
+
+}
+
+
+.input-with-count span {
+
+    position: absolute;
+
+    right: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #555;
+
+    font-size: 10px;
+
+    pointer-events: none;
+
+}
